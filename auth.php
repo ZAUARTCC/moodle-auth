@@ -90,7 +90,7 @@ class auth_plugin_zauartcc extends auth_plugin_base {
 
         require_once($CFG->dirroot . '/auth/zauartcc/config.php');
 
-        $ZAU = new ZauAuth($zauAuth['base'], $zauAuth['secret']);
+        $ZAU = new ZauAuth($zauAuth['base'], $zauAuth['secretkey']);
 
         // Check if user coming back from the login screen
         if(isset($_GET['verifier']) && isset($_GET['cid']) && isset($_GET['arg3'])) {
