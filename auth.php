@@ -116,7 +116,7 @@ class auth_plugin_zauartcc extends auth_plugin_base {
                         $newuser->firstname =  $firstname;
                         $newuser->lastname =  $lastname;
 
-                        create_user_record($username, '', 'vatsim');
+                        create_user_record($username, '', 'zauartcc');
                     } else {
                         $username = $user->username;
                     }
