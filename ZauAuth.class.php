@@ -49,7 +49,7 @@ class ZauAuth
         if (hash('sha256', $cid.$this->secret.$expiry) != $verifier || $expiry < time()) {
             return false;
         } else {
-            $this->cid = cid;
+            $this->cid = $cid;
             $this->expiry = $expiry;
             $this->verifier = $verifier;
             return true;
