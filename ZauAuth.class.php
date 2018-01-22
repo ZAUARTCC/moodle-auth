@@ -72,9 +72,11 @@ class ZauAuth
         curl_close($curl);
 
         $decoded = json_decode($response, true);
+        var_dump($decoded);
+        var_dump($response);
         if(!$decoded['err']) {
             $this->user = $decoded['msg'];
-            return false;
+            return true;
         } else {
             $this->error = $decoded['msg'];
             return false;
