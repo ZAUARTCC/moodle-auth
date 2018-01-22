@@ -95,7 +95,8 @@ class auth_plugin_zauartcc extends auth_plugin_base {
         // Check if user coming back from the login screen
         if(isset($_GET['verifier']) && isset($_GET['cid']) && isset($_GET['arg3'])) {
             if($ZAU->verifyRequest($_GET['verifier'], $_GET['cid'], $_GET['arg3'])) {
-                if($ZAU->getUser()) {
+                $getUser = $ZAU->getUser();
+                if($getUser) {
                     $username = $ZAU->user['cid'];
                     $useremail = $ZAU->user['email'];
                     // find the user in the current database, by CID, not email
@@ -147,6 +148,7 @@ class auth_plugin_zauartcc extends auth_plugin_base {
                         redirect($urltogo);
                     }
                 } else {
+                    var_dump($getUser); die();
                     throw new moodle_exception("An error occurred with the login process", 'auth_zauartcc');
                 }
             }
