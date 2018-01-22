@@ -83,7 +83,6 @@ class ZauAuth
 
     public function sendToZAU() {
         header("Location: https://login.zauartcc.org?action=moodle");
-        // echo "<a href='https://login.zauartcc.org?action=moodle'>Click to Login</a>";
         die();
     }
 }

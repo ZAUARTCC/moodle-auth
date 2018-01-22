@@ -121,8 +121,6 @@ class auth_plugin_zauartcc extends auth_plugin_base {
                         $username = $user->username;
                     }
 
-                    add_to_log(SITEID, 'auth_zauartcc', '', '', $username . '/' . $useremail);
-
                     $user = authenticate_user_login($username, null);
                     if ($user) {
                         //prefill more user information if new user
