@@ -72,8 +72,6 @@ class ZauAuth
         curl_close($curl);
 
         $decoded = json_decode($response, true);
-        var_dump($decoded);
-        var_dump($response);
         if(!$decoded['err']) {
             $this->user = $decoded['msg'];
             return true;
@@ -84,8 +82,8 @@ class ZauAuth
     }
 
     public function sendToZAU() {
-        // header("Location: https://login.zauartcc.org?action=moodle");
-        echo "<a href='https://login.zauartcc.org?action=moodle'>Click to Login</a>";
+        header("Location: https://login.zauartcc.org?action=moodle");
+        // echo "<a href='https://login.zauartcc.org?action=moodle'>Click to Login</a>";
         die();
     }
 }
